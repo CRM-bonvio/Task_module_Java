@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Created by igorjan on 15.12.15.
@@ -11,13 +12,13 @@ import javax.persistence.Id;
  */
 
 @Entity
-public class Department {
+public class File implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
+    private String file;
 
-    public Department(){}
-
+    public File(){}
 
 }

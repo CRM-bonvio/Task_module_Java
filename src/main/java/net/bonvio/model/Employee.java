@@ -16,8 +16,12 @@ public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String department;
-    private String position;
+
+    @OneToOne
+    private Department department;
+
+    @OneToOne
+    private Position position;
 
     @OneToMany(mappedBy = "employer")
     @JsonIgnore
@@ -29,7 +33,7 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(String department, String position, List<Task> taskList, List<Task> todoList) {
+    public Employee(Department department, Position position, List<Task> taskList, List<Task> todoList) {
         this.department = department;
         this.position = position;
         this.taskList = taskList;
@@ -39,10 +43,10 @@ public class Employee implements Serializable {
     public Integer getId() {
         return id;
     }
-    public String getDepartment() {
+    public Department getDepartment() {
         return department;
     }
-    public String getPosition() {
+    public Position getPosition() {
         return position;
     }
     public List<Task> getTaskList() {

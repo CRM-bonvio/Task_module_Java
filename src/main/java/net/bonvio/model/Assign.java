@@ -2,11 +2,9 @@ package net.bonvio.model;
 
 import sun.util.resources.cldr.az.TimeZoneNames_az;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by igorjan on 15.12.15.
@@ -19,15 +17,33 @@ public class Assign {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Date date;
+    @OneToOne
     private Task task;
-    private Position position;
+    @OneToMany
+    private List<Position> positionList;
 
-    public Assign(Integer id, Date date, Task task, Position position) {
+    public Assign(){}
+
+    public Assign(Integer id, Date date, Task task, List<Position> positionList) {
         this.id = id;
         this.date = date;
         this.task = task;
-        this.position = position;
+        this.positionList = positionList;
     }
 
-    public Assign(){}
+    public Integer getId() {
+        return id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public Task getTask() {
+        return task;
+    }
+
+    public List<Position> getPosition() {
+        return positionList;
+    }
 }

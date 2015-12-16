@@ -16,6 +16,25 @@ public class Priority {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
+    private Integer value;
 
     public Priority(){}
+
+    public Priority(Integer id, String name, Integer value) {
+        this.id = id;
+        this.name = name;
+        this.value = value;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public Integer getValue() {
+        return value;
+    }
 }

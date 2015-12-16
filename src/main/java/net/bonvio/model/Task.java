@@ -19,10 +19,12 @@ public class Task implements Serializable {
     private Date dateCreate;
     private Date dateStart;
     private Date dateClose;
+    @OneToOne
     private Condition startCondition;
+    @OneToOne
     private Priority priority;
+    @OneToOne
     private Status status;
-
     @ManyToOne
     private Employee employer;
     @ManyToOne
