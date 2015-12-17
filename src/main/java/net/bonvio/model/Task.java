@@ -20,6 +20,7 @@ public class Task implements Serializable {
     private Date dateCreate;
     private Date dateStart;
     private Date dateClose;
+    private Integer count;
     @ManyToOne
     private Condition condition;
     @ManyToOne
@@ -30,8 +31,8 @@ public class Task implements Serializable {
     private Status status;
     @ManyToOne
     private Employee employer;
-    @ManyToOne
-    private Employee employee;
+    @ManyToMany(mappedBy = "todoList")
+    private List<Employee> employeeList;
     @OneToMany(mappedBy = "task")
     private List<File> fileList;
 

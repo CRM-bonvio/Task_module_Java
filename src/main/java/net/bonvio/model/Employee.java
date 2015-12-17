@@ -30,7 +30,7 @@ public class Employee implements Serializable {
     @OneToMany(mappedBy = "employer")
     @JsonIgnore
     private List<Task> taskList = new ArrayList<>();
-    @OneToMany(mappedBy = "employee")
+    @ManyToMany(mappedBy = "employeeList")
     @JsonIgnore
     private List<Task> todoList = new ArrayList<>();
 
