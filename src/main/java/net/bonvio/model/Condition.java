@@ -1,10 +1,8 @@
 package net.bonvio.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by igorjan on 15.12.15.
@@ -20,28 +18,9 @@ public class Condition implements Serializable {
     private boolean isReady;
     private boolean isAccepted;
 
+    @OneToMany(mappedBy = "condition")
+    private List<Task> taskList;
+
     public Condition(){}
 
-    public Condition(Integer id, boolean isAccepted, boolean isReady, String name) {
-        this.id = id;
-        this.isAccepted = isAccepted;
-        this.isReady = isReady;
-        this.name = name;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public boolean isReady() {
-        return isReady;
-    }
-
-    public boolean isAccepted() {
-        return isAccepted;
-    }
 }

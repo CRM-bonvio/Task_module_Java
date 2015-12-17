@@ -1,9 +1,7 @@
 package net.bonvio.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by igorjan on 15.12.15.
@@ -16,6 +14,12 @@ public class Department {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String name;
+
+    @OneToMany(mappedBy = "department")
+    private List<AssignToPerformer> assignToPerformerList;
+
+    @OneToMany(mappedBy = "department")
+    private List<Employee> employeeList;
 
     public Department(){}
 

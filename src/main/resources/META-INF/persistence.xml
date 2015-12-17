@@ -7,13 +7,16 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <class>net.bonvio.model.Assign</class>
+        <class>net.bonvio.model.AssignToPerformer</class>
         <class>net.bonvio.model.Condition</class>
         <class>net.bonvio.model.Department</class>
         <class>net.bonvio.model.Employee</class>
+        <class>net.bonvio.model.File</class>
         <class>net.bonvio.model.Position</class>
         <class>net.bonvio.model.Priority</class>
         <class>net.bonvio.model.Status</class>
         <class>net.bonvio.model.Task</class>
+        <class>net.bonvio.model.Try</class>
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>

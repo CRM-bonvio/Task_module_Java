@@ -17,33 +17,11 @@ public class Assign {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Date date;
-    @OneToOne
+    @ManyToOne
     private Task task;
-    @OneToMany
-    private List<Position> positionList;
+    @OneToMany(mappedBy = "assign")
+    private List<AssignToPerformer> assignToPerformerList;
 
     public Assign(){}
 
-    public Assign(Integer id, Date date, Task task, List<Position> positionList) {
-        this.id = id;
-        this.date = date;
-        this.task = task;
-        this.positionList = positionList;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public Task getTask() {
-        return task;
-    }
-
-    public List<Position> getPosition() {
-        return positionList;
-    }
 }

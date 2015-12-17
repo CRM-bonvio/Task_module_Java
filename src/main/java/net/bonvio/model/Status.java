@@ -1,9 +1,7 @@
 package net.bonvio.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by igorjan on 15.12.15.
@@ -17,6 +15,9 @@ public class Status {
     private Integer id;
     private String name;
     private Integer field;
+
+    @OneToMany(mappedBy = "status")
+    private List<Task> taskList;
 
     public Status(){}
 

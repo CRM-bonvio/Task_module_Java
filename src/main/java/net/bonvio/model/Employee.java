@@ -17,10 +17,14 @@ public class Employee implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @OneToOne
+    @OneToMany(mappedBy = "employee")
+    private List<AssignToPerformer> assignToPerformerList;
+
+
+    @ManyToOne
     private Department department;
 
-    @OneToOne
+    @ManyToOne
     private Position position;
 
     @OneToMany(mappedBy = "employer")
@@ -33,26 +37,4 @@ public class Employee implements Serializable {
     public Employee() {
     }
 
-    public Employee(Department department, Position position, List<Task> taskList, List<Task> todoList) {
-        this.department = department;
-        this.position = position;
-        this.taskList = taskList;
-        this.todoList = todoList;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-    public Department getDepartment() {
-        return department;
-    }
-    public Position getPosition() {
-        return position;
-    }
-    public List<Task> getTaskList() {
-        return taskList;
-    }
-    public List<Task> getTodoList() {
-        return todoList;
-    }
 }
