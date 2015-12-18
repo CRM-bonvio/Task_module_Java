@@ -14,21 +14,17 @@ directory="."
 while getopts "icsdo:" opt; do
   case $opt in
     \?) usage;;
-    i) echo "INTERFACE";
-       interface="interface";
+    i) interface="interface";
        package="interfaces";
        impl="";
        implcc="";;
     c) what="Controller";
-       echo "controller";
        typ="Controller";
        low="controller";;
     d) what="DAO";
-       echo "DAO";
        typ="Repository";
        low="dao";;
     s) what="Service";
-       echo "Service";
        typ="Service";
        low="service";;
     o) directory=$OPTARG;
@@ -50,7 +46,6 @@ fi
 
 if [ $typ == "Controller" ]
 then
-    echo "WE ARE IN CONTROLLER";
     request="@RequestMapping(\"/${entity,,}\")";
     imports="import org.springframework.web.bind.annotation.*;";
     implcc=""
@@ -60,9 +55,6 @@ if [[ ($typ == "Service") && ($interface != "interface") ]]
 then
     need="implements $entity$what"
 fi
-
-
-echo "ENTITY $entity"
 
 echo -e "package net.bonvio.$low.$package;
 
