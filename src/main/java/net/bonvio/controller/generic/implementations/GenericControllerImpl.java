@@ -73,7 +73,7 @@ public class GenericControllerImpl<T> {
         Method[] allMethods = tClass.getDeclaredMethods();
         for (Method m : allMethods) {
             if (m.getName().equals("getId")) {
-                return tClass.getDeclaredMethod("getId", new Class[]{}).invoke(t, null);
+                return new ResponseId((Integer) tClass.getDeclaredMethod("getId", new Class[]{}).invoke(t, null));
             }
         }
         return new ResponseId((Integer) tClass.getSuperclass().getDeclaredMethod("getId", new Class[]{}).invoke(t, null));
