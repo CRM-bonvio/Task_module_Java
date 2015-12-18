@@ -1,7 +1,7 @@
 package net.bonvio.dao.implementations;
 
 import net.bonvio.dao.generic.implementations.GenericDAOImpl;
-import net.bonvio.model.Task;
+import net.bonvio.model.AssignToPerformer;
 import org.springframework.stereotype.Repository;
 
 
@@ -12,4 +12,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public class TaskDAOImpl extends GenericDAOImpl<Task> {}
+public class AssignToPerformerDAOImpl extends GenericDAOImpl<AssignToPerformer> {}

@@ -1,8 +1,8 @@
 package net.bonvio.service.implementations;
 
 import net.bonvio.service.generic.implementations.GenericServiceImpl;
-import net.bonvio.model.Task;
-import net.bonvio.service.interfaces.TaskService;
+import net.bonvio.model.Position;
+import net.bonvio.service.interfaces.PositionService;
 import org.springframework.stereotype.Service;
 
 
@@ -13,4 +13,4 @@ import org.springframework.stereotype.Service;
 
 @Service
 
-public class TaskServiceImpl extends GenericServiceImpl<Task> implements TaskService {}
+public class PositionServiceImpl extends GenericServiceImpl<Position> implements PositionService {}

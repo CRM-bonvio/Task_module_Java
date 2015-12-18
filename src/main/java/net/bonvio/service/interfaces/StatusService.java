@@ -1,7 +1,7 @@
 package net.bonvio.service.interfaces;
 
 import net.bonvio.service.generic.interfaces.GenericService;
-import net.bonvio.model.Task;
+import net.bonvio.model.Status;
 import org.springframework.stereotype.Service;
 
 
@@ -12,4 +12,4 @@ import org.springframework.stereotype.Service;
 
 
 
-public interface TaskService extends GenericService<Task> {}
+public interface StatusService extends GenericService<Status> {}

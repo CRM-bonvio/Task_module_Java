@@ -1,4 +1,4 @@
-package net.bonvio.service.generic;
+package net.bonvio.service.generic.interfaces;
 
 import org.springframework.transaction.annotation.Transactional;
 

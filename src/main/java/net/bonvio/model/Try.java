@@ -1,6 +1,7 @@
 package net.bonvio.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by igorjan on 17.12.15.
@@ -8,7 +9,7 @@ import javax.persistence.*;
  */
 
 @Entity
-public class Try {
+public class Try implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;

@@ -1,7 +1,7 @@
 package net.bonvio.service.implementations;
 
 import net.bonvio.model.Employee;
-import net.bonvio.service.generic.GenericServiceImpl;
+import net.bonvio.service.generic.implementations.GenericServiceImpl;
 import net.bonvio.service.interfaces.EmployeeService;
 import org.springframework.stereotype.Service;
 

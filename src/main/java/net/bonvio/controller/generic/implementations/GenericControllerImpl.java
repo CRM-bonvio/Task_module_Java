@@ -1,6 +1,6 @@
-package net.bonvio.controller.generic;
+package net.bonvio.controller.generic.implementations;
 
-import net.bonvio.service.generic.GenericService;
+import net.bonvio.service.generic.interfaces.GenericService;
 import net.bonvio.settings.ResponseId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +18,7 @@ import java.util.List;
  * Created by mil on 04.12.15.
  */
 
-public class GenericController<T> {
+public class GenericControllerImpl<T> {
 
     @Autowired
     private GenericService<T> tGenericService;
@@ -27,7 +27,7 @@ public class GenericController<T> {
     private Class<T> tClass;
 
     @SuppressWarnings("unchecked")
-    public GenericController() {
+    public GenericControllerImpl() {
         tClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
     }
 

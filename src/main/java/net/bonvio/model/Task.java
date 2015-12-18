@@ -31,7 +31,7 @@ public class Task implements Serializable {
     private Status status;
     @ManyToOne
     private Employee employer;
-    @ManyToMany(mappedBy = "todoList")
+    @ManyToMany
     private List<Employee> employeeList;
     @OneToMany(mappedBy = "task")
     private List<File> fileList;

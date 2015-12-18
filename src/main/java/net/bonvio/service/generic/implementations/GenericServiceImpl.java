@@ -1,6 +1,7 @@
-package net.bonvio.service.generic;
+package net.bonvio.service.generic.implementations;
 
 import net.bonvio.dao.generic.interfaces.GenericDAO;
+import net.bonvio.service.generic.interfaces.GenericService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
