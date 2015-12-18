@@ -20,14 +20,14 @@ fi
 while [ "$2" != "" ]; do
   entity=$1
   ./generate.sh -c -o $directory/controller/implementations $entity
-  ./generate.sh -d -o $directory/dao/implementations $entity
-  ./generate.sh -d -i -o $directory/dao/interfaces $entity
-  ./generate.sh -s -o $directory/service/implementations $entity
-  ./generate.sh -s -i -o $directory/service/interfaces $entity
   echo " controller  implementations  $entity  generated"
+  ./generate.sh -d -o $directory/dao/implementations $entity
   echo "    dao      implementations  $entity  generated"
+  ./generate.sh -d -i -o $directory/dao/interfaces $entity
   echo "    dao        interfaces     $entity  generated"
+  ./generate.sh -s -o $directory/service/implementations $entity
   echo "  service    implementations  $entity  generated"
+  ./generate.sh -s -i -o $directory/service/interfaces $entity
   echo "  service      interfaces     $entity  generated"
   shift
 done
